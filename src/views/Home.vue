@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <div v-if="isInIframe" class="alert alert-danger" role="alert">
+    <div class="alert alert-danger" role="alert">
       We are restricting iframe from using our script. To make this sample code
       work
       <a href="/" target="_blank" class="alert-link">click here</a>
@@ -70,15 +70,6 @@ export default {
   },
   beforeDestroy() {
     player.removeAllListeners();
-  },
-  computed: {
-    isInIframe() {
-      try {
-        return window.self !== window.top;
-      } catch (e) {
-        return true;
-      }
-    },
   },
   methods: {
     close() {
